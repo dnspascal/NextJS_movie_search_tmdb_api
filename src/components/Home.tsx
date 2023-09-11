@@ -23,7 +23,7 @@ const Home = () => {
     vote_average: string;
     overview: string;
     videos: {
-      result: [
+      results: [
         {
           type: string;
           key: string;
@@ -69,9 +69,8 @@ const Home = () => {
     const trailerIndex = movie?.videos?.results?.findIndex(
       (element) => element.type === "Trailer"
     );
-    const trailerURL = `https://www.youtube.com/watch?v=${
-      movie?.videos?.results[trailerIndex || 0]?.key
-    }`;
+    const trailerURL = `https://www.youtube.com/watch?v=${movie?.videos?.results[trailerIndex || 0]?.key
+      }`;
     setTrailer(trailerURL);
   }, [movie]);
 
@@ -133,9 +132,8 @@ const Home = () => {
         </div>
         {/* //Raact player */}
         <div
-          className={` absolute top-3 inset-x-[7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${
-            showPlayer ? "opacity-100 z-50" : "opacity-0 -z-10"
-          }`}
+          className={` absolute top-3 inset-x-[7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${showPlayer ? "opacity-100 z-50" : "opacity-0 -z-10"
+            }`}
         >
           <div className="flex justify-between bg-black text-[#f9f9f9] p-3.5 items-center ">
             <span className="font-semibold">Playing Trailer</span>
